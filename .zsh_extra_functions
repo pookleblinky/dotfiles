@@ -1,0 +1,13 @@
+#! /usr/bin/zsh
+
+todot() { # Sends dotfiles to ~/dotfiles
+    cp -v ~/.emacs ~/dotfiles &&
+    cp -v ~/.vimrc ~/dotfiles &&
+    cp -v ~/.zshrc ~/dotfiles &&
+    cp -v ~/.zsh_aliases ~/dotfiles &&
+    cp -v ~/.zsh_extra_functions ~/dotfiles &&
+    cp -v ~/.tmux.conf ~/dotfiles &&
+    cd ~/dotfiles &&
+    git add . && git commit && # hm, make commit message a $1 arg?
+    cd - # should return to previous working dir. let's try it.
+}

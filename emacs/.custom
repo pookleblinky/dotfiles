@@ -1,0 +1,32 @@
+;; Customizations
+
+;;Get Rid of annoyances
+(setq inhibit-startup-echo-area-message t)
+(setq inhibit-startup-message t)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq visible-bell t)
+
+;;Kill the excess newbie crap
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;disable backup
+(setq backup-inhibited t)
+;disable auto save
+(setq auto-save-default nil)
+;Jump mouse out of the way
+(mouse-avoidance-mode 'jump)
+;;Highlight regions
+(transient-mark-mode 1)
+;Force files to end with newlines
+(setq require-final-newline t)
+;;show matching parens
+(show-paren-mode 1)
+(add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
+
+; Wrap long lines according to the width of the window
+(add-hook 'window-configuration-change-hook
+          '(lambda ()
+             (setq rcirc-fill-column (- (window-width) 2))))
+
+

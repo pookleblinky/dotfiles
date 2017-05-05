@@ -1,0 +1,19 @@
+#! /bin/zsh
+
+# Useful aliases
+alias zso='source ~/.zshrc'
+alias zedit='edit ~/.zshrc'
+
+alias ..='cd ..'
+alias ll='ls -l'
+alias la='ls -a'
+
+alias emacs='emacsclient -nw -c -a ""'
+alias edit='emacsclient -nw -c -a ""'
+
+# Useful locations
+alias hacklog='emacs ~/writing/log.txt'
+alias tohack='cd ~/code'
+
+# Practice typing on new (first!) mechanical keyboard
+alias typequota='edit ~/home/pookleblinky/writing/typequota.txt'

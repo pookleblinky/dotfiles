@@ -1,0 +1,14 @@
+(defvar emacs-root "/home/pook") 
+
+(labels ((add-path (p)
+		   (add-to-list 'load-path
+				(concat emacs-root p))))
+	(add-path "emacs/lisp") ;; personal elisp
+	)
+
+
+(add-to-list 'load-path "~/emacs")                                                                   
+(load-library ".custom") ; Customizations
+(load-library "ekeys")   ; my keybindings
+(load-library "repos")   ; Repo list
+(load-library "funcs")   ; My functions

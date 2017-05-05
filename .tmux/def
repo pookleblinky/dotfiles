@@ -1,0 +1,11 @@
+# Testing removing layout info from tmux.conf, calling from within as wanted
+
+rename-session 'Hacking'
+split-window -h
+split-window -v
+selectw -t 0
+selectp -t 0
+split-window -v
+selectw -t 0
+selectp -t 0
+
