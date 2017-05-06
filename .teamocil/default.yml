@@ -1,0 +1,11 @@
+session:
+  name: "Hacking"
+windows:
+  - name: default
+    root: ~
+    layout: tiled
+    panes:
+      - vim
+      - emacs
+      - ddate
+      - cmus
