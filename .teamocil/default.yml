@@ -1,5 +1,3 @@
-session:
-  name: "Hacking"
 windows:
   - name: default
     root: ~
