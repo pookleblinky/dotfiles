@@ -1,0 +1,9 @@
+windows:
+  - name: sample
+    root: /home/pook
+    layout: tiled
+    panes:
+      - ddate
+      - ddate
+      - ddate
+      - ddate
