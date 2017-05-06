@@ -1,47 +1,13 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/pookleblinky/.oh-my-zsh
+  export ZSH=/home/pook/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="bureau"
-# themes i like so far: bureau, pure, geoffgarside, dallas, mrtazz
-
-#Compile .zshrc and functions, recompile if newer than compiled.
-autoload -U zrecompile
-zrecompile -p \
-    -R ~/.zshrc -- \
-    -R ~/.zsh_extra_functions -- \
-
-# completion
-autoload -U compinit
-compinit
-
-# correction
-unsetopt correctall # Worth going whole hog, or should I make exceptions?
-
-# prompt
-autoload -U promptinit
-promptinit
-
-# history
-setopt HIST_REDUCE_BLANKS
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt INC_APPEND_HISTORY
-setopt BANG_HIST
-HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=10000
-setopt appendhistory autocd extendedglob sharehistory
-
-
-source ~/.zsh_extra_functions
-source ~/.zsh_aliases
-
-### oh my zsh stuff ####
-
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -63,7 +29,7 @@ source ~/.zsh_aliases
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -85,19 +51,13 @@ source ~/.zsh_aliases
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vim ruby rake python tmux)
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-  export EDITOR='emacsclient -nw -c -a ""'
-  export VISUAL='emacsclient -nw -c -a ""'
-  export ALTERNATE_EDITOR=emacs
-
-
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -109,11 +69,14 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+# editor-agnostic way to make emacsclient behave
+export ALTERNATE_EDITOR=""
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -123,3 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias emacs="emacs -nw"
+alias e="emacsclient -t"
+
+source ~/.zshrc_functions
