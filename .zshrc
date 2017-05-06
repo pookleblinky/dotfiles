@@ -90,3 +90,4 @@ alias emacs="emacs -nw"
 alias e="emacsclient -t"
 
 source ~/.zshrc_functions
+compctl -g '~/.teamocil/*(:t:r)' teamocil
