@@ -4,7 +4,19 @@
 execute pathogen#infect()
 
 " Fuck Esc
-inoremap ii <esc>
+inoremap jk <esc>
+inoremap <esc> <nop> " Train em fingers
+
+" Remove bad habits with nop
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>     
+map <Up> <Nop>
+map <Down> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+
 
 " Filetype plugins
 filetype plugin on
