@@ -34,5 +34,5 @@
 (color-theme-charcoal-black)
 
 ;; Slime
-(setq inferior-lisp-program "/usr/bin/sbcl")
+(setq inferior-lisp-program "/usr/bin/clisp")
 ; Maybe set it up for other implementations later
