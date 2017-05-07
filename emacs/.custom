@@ -29,4 +29,10 @@
           '(lambda ()
              (setq rcirc-fill-column (- (window-width) 2))))
 
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-charcoal-black)
 
+;; Slime
+(setq inferior-lisp-program "/usr/bin/sbcl")
+; Maybe set it up for other implementations later
