@@ -39,6 +39,9 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Pathogen
+execute pathogen#infect()
+
 " Remap escape to a better option
 inoremap ii <esc>
 
