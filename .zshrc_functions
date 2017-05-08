@@ -1,2 +1,2 @@
 # Copy dotfile into ~/dotfiles, stashed for backup into turtle
-todot() { cp $1 ~/dotfiles/$2 }
+todot() { cp $1 /media/removable/turtle/dotfiles }
