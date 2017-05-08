@@ -5,7 +5,11 @@ execute pathogen#infect()
 
 " Fuck Esc
 inoremap jk <esc>
-inoremap <esc> <nop> " Train em fingers
+inoremap <esc> <nop> 
+
+" Remap leader
+let mapleader = ","
+let g:mapleeader = ","
 
 " Remove bad habits with nop
 noremap <Up> <Nop>
