@@ -20,7 +20,7 @@ map <Up> <Nop>
 map <Down> <Nop>
 map <Left> <Nop>
 map <Right> <Nop>
-
+let g:hardtime_default_on = 1
 
 " Filetype plugins
 filetype plugin on
@@ -62,9 +62,10 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme wombat256
 catch
 endtry
+" schemes I like: wombat256
 
 set background=dark
 
