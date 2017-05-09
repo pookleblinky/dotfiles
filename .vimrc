@@ -1,5 +1,8 @@
 " Barebones vimrc
 
+
+set shell=/usr/bin/zsh
+
 " Pathogen
 execute pathogen#infect()
 
@@ -10,6 +13,7 @@ inoremap <esc> <nop>
 " Remap leader
 let mapleader = ","
 let g:mapleeader = ","
+map <Leader> <Plug>(easymotion-prefix)
 
 " Remove bad habits with nop
 noremap <Up> <Nop>
@@ -61,14 +65,6 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme wombat256
-catch
-endtry
-" schemes I like: wombat256
-
-set background=dark
-
 " Fuck gui crap
 if has("gui_running")
     set guioptions-=T
@@ -107,3 +103,6 @@ set laststatus=2
 
 " Format the status line
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+
+
+colorscheme wombat256
