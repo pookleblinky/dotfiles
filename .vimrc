@@ -13,7 +13,15 @@ inoremap <esc> <nop>
 " Remap leader
 let mapleader = ","
 let g:mapleeader = ","
-map <Leader> <Plug>(easymotion-prefix)
+
+" Remap window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-j> <C-w>k
+nnoremap <C-l> <C-w>l
+
+
+
 
 " Remove bad habits with nop
 noremap <Up> <Nop>
@@ -37,6 +45,8 @@ set wildmenu
 set wildignore=*.o,*~,*.pyc
 
 set ruler
+
+set textwidth=80
 
 " Hide abandoned buffer
 set hid
