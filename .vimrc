@@ -14,7 +14,9 @@ inoremap <esc> <nop>
 let mapleader = ","
 let g:mapleeader = ","
 
-" Leader commands
+" My Leader commands
+" clear search highlights with ,spc
+nnoremap <leader><space> :noh<cr>
 
 
 
@@ -47,8 +49,6 @@ set smartcase
 
 set hlsearch
 set incsearch
-" Clear search highlights with ,space
-nnoremap <leader><space> :noh<cr>
 
 set whichwrap+=<,>,h,l
 
