@@ -1,7 +1,7 @@
 " Barebones vimrc
+" Outsourcting basic stuff to sensible.vim
 
-
-set shell=/usr/bin/zsh
+set nocompatible
 
 " Pathogen
 execute pathogen#infect()
@@ -14,14 +14,15 @@ inoremap <esc> <nop>
 let mapleader = ","
 let g:mapleeader = ","
 
+" Leader commands
+
+
+
 " Remap window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-j> <C-w>k
 nnoremap <C-l> <C-w>l
-
-
-
 
 " Remove bad habits with nop
 noremap <Up> <Nop>
@@ -34,17 +35,7 @@ map <Left> <Nop>
 map <Right> <Nop>
 let g:hardtime_default_on = 1
 
-" Filetype plugins
-filetype plugin on
-filetype indent on
-
-set autoread
-
-" Wildmenu
-set wildmenu
 set wildignore=*.o,*~,*.pyc
-
-set ruler
 
 set textwidth=80
 
@@ -55,9 +46,10 @@ set ignorecase
 set smartcase
 
 set hlsearch
-set incsearch 
+set incsearch
+" Clear search highlights with ,space
+nnoremap <leader><space> :noh<cr>
 
-set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 set showmatch
@@ -67,8 +59,6 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-
-syntax enable
 
 " 256 colors in gnome-terminal
 if $COLORTERM == 'gnome-terminal'
@@ -92,28 +82,19 @@ set nowb
 set noswapfile
 
 set expandtab
-set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" autofills
-set lbr
-set tw=500
-set ai " auto-indent
-set si "smart indent
-set wrap "wrap lines
+set relativenumber
 
 " Return to last edit position when opening file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
 
-" Always show status
-set laststatus=2
-
 " Format the status line
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 let g:slime_target = "tmux"
 
-colorscheme wombat256
+colorscheme zenburn
