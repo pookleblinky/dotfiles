@@ -11,8 +11,8 @@ inoremap jk <esc>
 inoremap <esc> <nop> 
 
 " Remap leader
-let mapleader = ","
-let g:mapleeader = ","
+let mapleader = "\<space>"
+let g:mapleeader = "\<space>"
 
 " My Leader commands
 " clear search highlights with ,spc
