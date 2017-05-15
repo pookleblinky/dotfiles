@@ -3,6 +3,9 @@
 
 set nocompatible
 
+" good amount of time to type ,ev etc
+set timeoutlen=1000
+
 " Pathogen
 execute pathogen#infect()
 
@@ -11,14 +14,14 @@ inoremap jk <esc>
 inoremap <esc> <nop> 
 
 " Remap leader
-let mapleader = "\<space>"
-let g:mapleeader = "\<space>"
+let mapleader = ","
+let g:mapleeader = ","
 
 " My Leader commands
 " clear search highlights with ,spc
 nnoremap <leader><space> :noh<cr>
-
-
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Remap window navigation
 nnoremap <C-h> <C-w>h
