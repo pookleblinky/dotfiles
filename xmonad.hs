@@ -1,6 +1,14 @@
 import XMonad
-import XMonad.Config.Desktop
 
-baseConfig = desktopConfig
+myModMask  = mod4Mask
 
-main = xmonad baseConfig
+myWorkspaces = ["term", "web", "crap"] ++ map show [4..9]
+
+myBar = "xmobar"
+
+main = xmonad defaults
+
+defaults = defaultConfig {
+       modMask = myModMask
+    ,  workspaces = myWorkspaces
+    }
