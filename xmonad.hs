@@ -9,6 +9,7 @@ myBar = "xmobar"
 main = xmonad defaults
 
 defaults = defaultConfig {
-       modMask = myModMask
+       modMask    = myModMask
     ,  workspaces = myWorkspaces
+    ,  terminal   = "st"
     }
