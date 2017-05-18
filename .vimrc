@@ -4,7 +4,7 @@
 set nocompatible
 
 " good amount of time to type ,ev etc
-set timeoutlen=1000
+set timeoutlen=2000
 
 " Pathogen
 execute pathogen#infect()
@@ -22,6 +22,22 @@ let g:mapleeader = ","
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" programmer dvorak swaps ;'
+nmap ' :
+
+" Cmus
+command Cmusplay   :!cmus-remote -p
+command Cmuspause  :!cmus-remote -u
+command Cmusnext   :!cmus-remote -n
+command Cmusprev   :!cmus-remote -r
+
+" Xmonad
+command Xmonedit    :vsplit ~/.xmonad/xmonad.hs
+command Xmoncompile :!xmonad --recompile
+
+" insert rfc 8601 date
+command Date :r!date
 
 " Remap window navigation
 nnoremap <C-h> <C-w>h
@@ -84,6 +100,8 @@ set nobackup
 set nowb
 set noswapfile
 
+set clipboard =unnamedplus
+
 set expandtab
 set shiftwidth=4
 set tabstop=4
@@ -100,4 +118,4 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:
 
 let g:slime_target = "tmux"
 
-colorscheme zenburn
+colorscheme wombat256
