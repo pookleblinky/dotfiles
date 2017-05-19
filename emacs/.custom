@@ -37,3 +37,5 @@
 (setq inferior-lisp-program "/usr/bin/clisp")
 (slime-setup '(slime-fancy))
 ; Maybe set it up for other implementations later
+
+; Geiser is acting weird on schemes other than guile

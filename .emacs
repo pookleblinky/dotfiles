@@ -28,6 +28,7 @@
 (load-library "repos") ; My repos
 (load-library ".custom") ; customizations
 (load-library "ekeys")   ; keybindings
+(load-library "my-aliases") ; aliases
 
 
 (custom-set-variables

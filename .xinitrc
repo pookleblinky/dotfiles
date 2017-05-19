@@ -2,6 +2,7 @@
 #
 setxkbmap -layout us -variant dvorak -option ctrl:nocaps
 xsetroot -cursor_name left_ptr
+xset s off -dpms
 feh --randomize --bg-scale ~/Pictures/wallpaper/*
 
 session=$(1:-unity)

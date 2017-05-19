@@ -111,6 +111,8 @@ set relativenumber
 " Return to last edit position when opening file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" Yaml indents
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
 " Format the status line

@@ -1,0 +1,9 @@
+windows:
+  - name: SICP
+    root: ~/coding/sicp
+    layout: 6b14,205x57,0,0{123x57,0,0,0,81x57,124,0[81x28,124,0,1,81x28,124,29,2]}
+    panes:
+      - vim
+      - racket
+      - cd ./sicp/html 
+     
