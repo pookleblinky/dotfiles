@@ -16,14 +16,13 @@
 (defvar emacs-root "/home/pook/")
 
 (add-to-list 'load-path (concat emacs-root "emacs"))
-(add-to-list 'load-path "emacs/slime")
-(require 'slime-autoloads)
 
 
 (labels ((add-path (p)
 		   (add-to-list 'load-path
 				(concat emacs-root p))))
   (add-path "emacs/lisp") ; personal elisp
+  (add-path "slime")      ; Slime (from git)
   )
 
 
