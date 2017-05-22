@@ -35,8 +35,8 @@
 
 (require 'slime-autoloads)
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
-(setq inferior-lisp-program "/usr/bin/clisp")
 (require 'slime)
+(setq inferior-lisp-program "/usr/bin/clisp")
 (slime-setup)
 ; Ok, I've bashed my head against this for 3 cigarettes, and no dice.
 ; sbcl doesn't want to work with slime, even using quicklisp.
