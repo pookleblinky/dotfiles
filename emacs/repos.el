@@ -8,10 +8,6 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
-;slime
-(add-to-list 'load-path "~/.emacs.d/elpa/slime")
-(require 'slime-autoloads)
-
 (package-initialize) ;; You might already have this line
 
 

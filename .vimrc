@@ -23,8 +23,11 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" programmer dvorak swaps ;'
-nmap ' :
+" Toggle paste mode
+set pastetoggle=<F2>
+
+" 8601 Timestamp
+command -nargs=0 -bar Timestamp execute "normal! a\<c-R>=strftime(\"%FT%T%z\")\<cr>"
 
 " Cmus
 command Cmusplay   :!cmus-remote -p

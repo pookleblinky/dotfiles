@@ -33,9 +33,11 @@
 (color-theme-initialize)
 (color-theme-charcoal-black)
 
-;; Slime
+(require 'slime-autoloads)
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "/usr/bin/clisp")
-(slime-setup '(slime-fancy))
-; Maybe set it up for other implementations later
-
-; Geiser is acting weird on schemes other than guile
+(require 'slime)
+(slime-setup)
+; Ok, I've bashed my head against this for 3 cigarettes, and no dice.
+; sbcl doesn't want to work with slime, even using quicklisp.
+; Clisp, of course, works perfectly. 
