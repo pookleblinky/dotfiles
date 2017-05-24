@@ -1,0 +1,19 @@
+windows:
+  - name: hacking
+    root: ~/
+    layout: 457b,212x58,0,0{118x58,0,0[118x48,0,0,5,118x9,0,49,11],93x58,119,0[93x29,119,0,9,93x28,119,30,10]}
+    panes:
+      - vim
+      - ddate
+      - ddate
+      - ddate
+   - name: music
+     root: ~/Music/cmus-playlists
+     layout: tiled
+     panes:
+       - cmus
+   - name: irc
+     root: ~/
+     layout: tiled
+     panes:
+       - ddate

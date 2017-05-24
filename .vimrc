@@ -2,6 +2,8 @@
 " Outsourcting basic stuff to sensible.vim
 
 set nocompatible
+" Sensible.vim is supposed to do this. Syntastic says otherwise
+set shell=/bin/bash
 
 " good amount of time to type ,ev etc
 set timeoutlen=2000
@@ -122,5 +124,14 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 let g:slime_target = "tmux"
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 colorscheme wombat256
