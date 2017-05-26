@@ -8,7 +8,8 @@
 	 "* Code:")
 	("n" "Notes" entry (file+headline "~/org/refile.org" "Notes")
 	 "* Note:")
-	("y" "Yakshaving" entry (file+headline "~/org/refile.org" "Yakshaving"))))
+	("y" "Yakshaving" entry (file+headline "~/org/refile.org" "Yakshaving")
+	 "* Yakshave:")))
 
 ;; Refile targets
 (setq org-refile-targets '((nil :maxlevel . 9)
