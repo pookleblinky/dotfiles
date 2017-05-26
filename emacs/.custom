@@ -29,6 +29,8 @@
           '(lambda ()
              (setq rcirc-fill-column (- (window-width) 2))))
 
+(setq org-log-done t)
+
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-charcoal-black)
@@ -36,8 +38,9 @@
 (require 'slime-autoloads)
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (require 'slime)
-(setq inferior-lisp-program "/usr/bin/clisp")
+(setq inferior-lisp-program "/home/pook/ccl/lx86cl64")
 (slime-setup)
 ; Ok, I've bashed my head against this for 3 cigarettes, and no dice.
 ; sbcl doesn't want to work with slime, even using quicklisp.
 ; Clisp, of course, works perfectly. 
+

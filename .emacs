@@ -1,8 +1,6 @@
-;;pookleblinky's .emacs.
 ;;A work in progress
 ;;Licensed under the Motherfucking Software License
 ;;pookleblinky AT gmail DOT com
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -12,6 +10,10 @@
 (require 'cl)
 (require 'evil)
 (require 'key-chord)
+(require 'org)
+(require 'helm-config)
+
+(helm-mode t)
 
 (defvar emacs-root "/home/pook/")
 
@@ -25,12 +27,25 @@
   (add-path "slime")      ; Slime (from git)
   )
 
-
 (load-library "funcs") ; My functions
 (load-library "repos") ; My repos
 (load-library ".custom") ; customizations
 (load-library "ekeys")   ; keybindings
 (load-library "my-aliases") ; aliases
+(load-library "web") ; w3m
+(load-library "org") ; org-mode
+
+;; Org mode
+;; Too much duplication. Concat dirs at some point
+(setq org-directory "~/org")
+(setq org-agenda-files (list
+			"~/org/blog.org"
+			"~/org/code.org"
+			"~/org/ideas.org"
+			"~/org/notes.org"
+			"~/org/todo.org"
+			"~/org/yakshaving.org"))
+(setq org-default-notes-file "~/org/notes.org")
 
 
 (custom-set-variables
@@ -40,7 +55,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (key-chord evil paredit geiser yaml-mode color-theme-solarized color-theme ruby-mode macrostep haskell-mode clojure-mode-extra-font-locking cider))))
+    (helm markdown-mode+ markdown-mode w3m alchemist clojure-project-mode erlang elixir-mode key-chord evil paredit geiser yaml-mode color-theme-solarized color-theme ruby-mode macrostep haskell-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
