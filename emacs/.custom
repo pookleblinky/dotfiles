@@ -1,5 +1,10 @@
 ;; Customizations
 
+(evil-mode t)
+(setq evil-normal-state-tag "NORMAL")
+(setq evil-insert-state-tag "INSERT")
+(setq evil-visual-state-tag "VISUAL")
+
 ;;Get Rid of annoyances
 (setq inhibit-startup-echo-area-message t)
 (setq inhibit-startup-message t)
@@ -31,9 +36,14 @@
 
 (setq org-log-done t)
 
+;; Font
+(set-frame-font "Droid Sans Mono 13") 
+
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-charcoal-black)
+(color-theme-subtle-hacker)
+
+(powerline-default-theme)
 
 (require 'slime-autoloads)
 (load (expand-file-name "~/quicklisp/slime-helper.el"))

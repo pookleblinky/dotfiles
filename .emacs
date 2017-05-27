@@ -12,6 +12,7 @@
 (require 'key-chord)
 (require 'org)
 (require 'helm-config)
+(require 'powerline)
 
 (helm-mode t)
 
@@ -47,15 +48,17 @@
 			"~/org/yakshaving.org"))
 (setq org-default-notes-file "~/org/notes.org")
 
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   (quote
+    ("~/org/blog.org" "~/org/code.org" "~/org/notes.org" "~/org/todo.org")))
  '(package-selected-packages
    (quote
-    (helm markdown-mode+ markdown-mode w3m alchemist clojure-project-mode erlang elixir-mode key-chord evil paredit geiser yaml-mode color-theme-solarized color-theme ruby-mode macrostep haskell-mode clojure-mode-extra-font-locking cider))))
+    (powerline helm markdown-mode+ markdown-mode w3m alchemist clojure-project-mode erlang elixir-mode key-chord evil paredit geiser yaml-mode color-theme-solarized color-theme ruby-mode macrostep haskell-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
