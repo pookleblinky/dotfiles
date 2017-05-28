@@ -13,6 +13,7 @@
 (require 'org)
 (require 'helm-config)
 (require 'powerline)
+(require 'powerline-evil)
 
 (helm-mode t)
 
@@ -40,25 +41,19 @@
 ;; Too much duplication. Concat dirs at some point
 (setq org-directory "~/org")
 (setq org-agenda-files (list
-			"~/org/blog.org"
 			"~/org/code.org"
-			"~/org/ideas.org"
-			"~/org/notes.org"
-			"~/org/todo.org"
-			"~/org/yakshaving.org"))
-(setq org-default-notes-file "~/org/notes.org")
+			"~/org/blog.org"
+                         "~/org/orgfile.org"))
+(setq org-default-notes-file "~/org/orgfile.org")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   (quote
-    ("~/org/blog.org" "~/org/code.org" "~/org/notes.org" "~/org/todo.org")))
  '(package-selected-packages
    (quote
-    (powerline helm markdown-mode+ markdown-mode w3m alchemist clojure-project-mode erlang elixir-mode key-chord evil paredit geiser yaml-mode color-theme-solarized color-theme ruby-mode macrostep haskell-mode clojure-mode-extra-font-locking cider))))
+    (powerline-evil powerline helm markdown-mode+ markdown-mode w3m alchemist clojure-project-mode erlang elixir-mode key-chord evil paredit geiser yaml-mode color-theme-solarized color-theme ruby-mode macrostep haskell-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

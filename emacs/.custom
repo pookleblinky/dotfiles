@@ -29,6 +29,8 @@
 (show-paren-mode 1)
 (add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
 
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
 ; Wrap long lines according to the width of the window
 (add-hook 'window-configuration-change-hook
           '(lambda ()
@@ -43,7 +45,7 @@
 (color-theme-initialize)
 (color-theme-subtle-hacker)
 
-(powerline-default-theme)
+(powerline-evil-center-color-theme)
 
 (require 'slime-autoloads)
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
