@@ -1,0 +1,103 @@
+* Readme
+I currently have my emacs configs organized by being in separate
+files. Each file has a bit of organization, but nowhere near as much
+as org mode provides. So: I'm going to start migrating them into
+here. Once this contains them all, I'll edit .emacs to load this
+single file. 
+
+This isn't that high a priority, I'll migrate things over as the mood
+takes me. Eventually I'll have an extremely organized setup. 
+
+I may migrate individual files (say, .custom) into .org files
+following the below structure, then just plop them in once done.
+* Aliases
+** Major modes
+** Minor modes
+** Elisp
+** Handy
+* Customization
+** Annoyances
+*** TODO subdivide these
+#+BEGIN_SRC emacs-lisp 
+;;Get Rid of annoyances
+(setq inhibit-startup-echo-area-message t)
+(setq inhibit-startup-message t)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq visible-bell t)
+;;Kill the excess newbie crap
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;disable backup
+(setq backup-inhibited t)
+;disable auto save
+(setq auto-save-default nil)
+;Jump mouse out of the way
+(mouse-avoidance-mode 'jump)
+;;Highlight regions
+(transient-mark-mode 1)
+;Force files to end with newlines
+(setq require-final-newline t)
+;;show matching parens
+(show-paren-mode 1)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+; Wrap long lines according to the width of the window
+(add-hook 'window-configuration-change-hook
+          '(lambda ()
+             (setq rcirc-fill-column (- (window-width) 2))))
+#+END_SRC
+** Evil mode
+#+BEGIN_SRC emacs-lisp 
+(evil-mode t)
+(setq evil-normal-state-tag "NORMAL")
+(setq evil-insert-state-tag "INSERT")
+(setq evil-visual-state-tag "VISUAL")
+#+END_SRC
+** Font
+#+BEGIN_SRC emacs-lisp 
+(set-frame-font "Droid Sans Mono 13") 
+#+END_SRC
+** Helm
+#+BEGIN_SRC emacs-lisp 
+(setq helm-split-window-in-side-p t) ; open helm buffer inside current window, not occupy whole other window
+#+END_SRC
+** Org
+#+BEGIN_SRC emacs-lisp 
+(add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
+#+END_SRC
+** Powerline
+#+BEGIN_SRC emacs-lisp 
+(powerline-evil-center-color-theme)
+#+END_SRC
+** Slime
+#+BEGIN_SRC emacs-lisp 
+(require 'slime-autoloads)
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(require 'slime)
+(setq inferior-lisp-program "/home/pook/ccl/lx86cl64")
+(slime-setup)
+; Ok, I've bashed my head against this for 3 cigarettes, and no dice.
+; sbcl doesn't want to work with slime, even using quicklisp.
+; Clisp, of course, works perfectly. 
+#+END_SRC
+** Theme
+#+BEGIN_SRC emacs-lisp 
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-subtle-hacker)
+#+END_SRC
+* Keybindings
+** General
+** Helm
+** Org mode
+* Org Behaviour
+** Capture templates
+** General
+** Keywords/sequences
+** Refile targets
+* Repos
+* W3m
+** Functions
+** General
+** Homepage
+** User agent

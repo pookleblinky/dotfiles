@@ -1,11 +1,7 @@
-;; Customizations
-
-;;;;; Evil mode
-(evil-mode t)
-(setq evil-normal-state-tag "NORMAL")
-(setq evil-insert-state-tag "INSERT")
-(setq evil-visual-state-tag "VISUAL")
-
+* Customization
+** Annoyances
+*** TODO subdivide these
+#+BEGIN_SRC emacs-lisp 
 ;;Get Rid of annoyances
 (setq inhibit-startup-echo-area-message t)
 (setq inhibit-startup-message t)
@@ -27,29 +23,37 @@
 (setq require-final-newline t)
 ;;show matching parens
 (show-paren-mode 1)
-(add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
-
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
-
 ; Wrap long lines according to the width of the window
 (add-hook 'window-configuration-change-hook
           '(lambda ()
              (setq rcirc-fill-column (- (window-width) 2))))
-
-(setq org-log-done t)
-
-;; Font
+#+END_SRC
+** Evil mode
+#+BEGIN_SRC emacs-lisp 
+(evil-mode t)
+(setq evil-normal-state-tag "NORMAL")
+(setq evil-insert-state-tag "INSERT")
+(setq evil-visual-state-tag "VISUAL")
+#+END_SRC
+** Font
+#+BEGIN_SRC emacs-lisp 
 (set-frame-font "Droid Sans Mono 13") 
-
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-subtle-hacker)
-
-(powerline-evil-center-color-theme)
-
-;; Helm behaviour
+#+END_SRC
+** Helm
+#+BEGIN_SRC emacs-lisp 
 (setq helm-split-window-in-side-p t) ; open helm buffer inside current window, not occupy whole other window
-      
+#+END_SRC
+** Org
+#+BEGIN_SRC emacs-lisp 
+(add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
+#+END_SRC
+** Powerline
+#+BEGIN_SRC emacs-lisp 
+(powerline-evil-center-color-theme)
+#+END_SRC
+** Slime
+#+BEGIN_SRC emacs-lisp 
 (require 'slime-autoloads)
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (require 'slime)
@@ -58,4 +62,10 @@
 ; Ok, I've bashed my head against this for 3 cigarettes, and no dice.
 ; sbcl doesn't want to work with slime, even using quicklisp.
 ; Clisp, of course, works perfectly. 
-
+#+END_SRC
+** Theme
+#+BEGIN_SRC emacs-lisp 
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-subtle-hacker)
+#+END_SRC

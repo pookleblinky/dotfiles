@@ -1,12 +1,10 @@
-;; Customizations
+.custom -*- mode: org -*-
 
-;;;;; Evil mode
-(evil-mode t)
-(setq evil-normal-state-tag "NORMAL")
-(setq evil-insert-state-tag "INSERT")
-(setq evil-visual-state-tag "VISUAL")
+;; Project: organize emacs dots in org. Right now I just want
+;; to parallel the dots and rearrange. Later, org-babel to actually
+;; replace em.
 
-;;Get Rid of annoyances
+* Get Rid of Annoyances
 (setq inhibit-startup-echo-area-message t)
 (setq inhibit-startup-message t)
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -28,7 +26,6 @@
 ;;show matching parens
 (show-paren-mode 1)
 (add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
-
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ; Wrap long lines according to the width of the window
@@ -38,18 +35,27 @@
 
 (setq org-log-done t)
 
-;; Font
-(set-frame-font "Droid Sans Mono 13") 
+* Evil Mode
+(evil-mode t)
+(setq evil-normal-state-tag "NORMAL")
+(setq evil-insert-state-tag "INSERT")
+(setq evil-visual-state-tag "VISUAL")
 
+* Font
+(set-frame-font "Droid Sans Mono 13")
+
+* Helm 
+(setq helm-split-window-in-side-p t) ; open helm buffer inside current window, not occupy whole other window
+ 
+* Theme
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-subtle-hacker)
 
+* Powerline
 (powerline-evil-center-color-theme)
 
-;; Helm behaviour
-(setq helm-split-window-in-side-p t) ; open helm buffer inside current window, not occupy whole other window
-      
+* Slime
 (require 'slime-autoloads)
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (require 'slime)
