@@ -49,7 +49,7 @@
 
 ;; Helm behaviour
 (setq helm-split-window-in-side-p t) ; open helm buffer inside current window, not occupy whole other window
-      
+     
 (require 'slime-autoloads)
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (require 'slime)

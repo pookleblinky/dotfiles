@@ -10,13 +10,14 @@
 (require 'helm-config)
 (require 'powerline)
 (require 'powerline-evil)
+(require 'yasnippet)
 
 (helm-mode 1)
+(yas/global-mode 1)
 
 (defvar emacs-root "/home/pook/")
 
 (add-to-list 'load-path (concat emacs-root "emacs"))
-
 
 (labels ((add-path (p)
 		   (add-to-list 'load-path
@@ -39,8 +40,13 @@
 (setq org-agenda-files (list
 			"~/org/code.org"
 			"~/org/blog.org"
-                         "~/org/orgfile.org"))
+			"~/org/orgfile.org"))
 (setq org-default-notes-file "~/org/orgfile.org")
+
+;; Yasnippet
+(setq yas-snippet-dirs
+      '("~/emacs/snippets"
+	"~/emacs/yasnippet-snippets"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -49,12 +55,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (powerline-evil powerline helm markdown-mode+ markdown-mode
-		    w3m alchemist clojure-project-mode erlang
-		    elixir-mode key-chord evil paredit geiser
-		    yaml-mode color-theme-solarized color-theme
-		    ruby-mode macrostep haskell-mode
-		    clojure-mode-extra-font-locking cider))))
+    (yasnippet-bundle powerline-evil powerline helm markdown-mode+ markdown-mode w3m alchemist clojure-project-mode erlang elixir-mode key-chord evil paredit geiser yaml-mode color-theme-solarized color-theme ruby-mode macrostep haskell-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
