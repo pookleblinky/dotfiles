@@ -44,9 +44,10 @@
 (setq org-default-notes-file "~/org/orgfile.org")
 
 ;; Yasnippet
-(setq yas-snippet-dirs
-      '("~/emacs/snippets"
-	"~/emacs/yasnippet-snippets"))
+(setq yas/root-directory (list
+			  "~/emacs/snippets"
+			  "~/emacs/yasnippet-snippets"))
+(yas/initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
