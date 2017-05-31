@@ -14,7 +14,7 @@
 
 (setq dotdirs '("~/emacs"
 		"~/.teamocil"
-		"~/.config/fish/functions")
+		"~/.config/fish/functions"))
 
 ;; Make functions to barf ls ./vim/bundle > vimpluginlist
 ;; echo $PATH > pathlist      
