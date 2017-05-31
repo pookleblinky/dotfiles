@@ -1,6 +1,12 @@
 (setq backupdir "/media/removable/turtle/dotfiles")
 
-(setq dotfiles '("~/xinitrc"
+# Create list of vimplugins
+ls -1 ~/.vim/bundle > ~/vimpluginlist
+
+# Slurp pathlist
+echo $PATH > ~/pathlist
+
+(setq dotfiles '("~/.xinitrc"
 		 "~/xmonad/xmonad.hs"
 		 "~/.sbclrc"
 		 "~/.clisprc.lisp"
@@ -10,11 +16,15 @@
 		 "~/.config/i3/config"
 		 "~/.zshrc"
 		 "~/.zshrc_functions"
-		 "~/.lein/profiles.clj"))
+		 "~/.lein/profiles.clj"
+		 "~/vimpluginlist"
+		 "~/pathlist"))
 
 (setq dotdirs '("~/emacs"
-		"~/.teamocil"
-		"~/.config/fish/functions"))
+		"~/.teamocil"))
 
-;; Make functions to barf ls ./vim/bundle > vimpluginlist
-;; echo $PATH > pathlist      
+(setq fishfunctiondir "~/.config/fish/functions") # name too generic, do separately
+
+for file in $dotfiles { cp $file $backupdir}
+for dir in $dotdirs { cp -R $dir $backupdir}
+cp -R $fishfunctiondir $backupdir/fish
