@@ -23,8 +23,8 @@
 		   (add-to-list 'load-path
 				(concat emacs-root p))))
   (add-path "emacs/lisp") ; personal elisp
-  (add-path "slime")      ; Slime (from git)
-  )
+  (add-path "slime"))      ; Slime (from git)
+
 
 (load-library "funcs") ; My functions
 (load-library "repos") ; My repos
@@ -48,8 +48,6 @@
 			  "~/emacs/snippets"
 			  "~/emacs/yasnippet-snippets"))
 (yas/initialize)
-
-(shell "Shell 1")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
