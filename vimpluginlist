@@ -4,6 +4,7 @@ hardmode
 nerdtree
 rainbow_parentheses.vim
 syntastic
+ultisnips
 vim-airline
 vim-colorschemes
 vim-elixir
@@ -18,4 +19,5 @@ vim-sensible
 vim-sexp
 vim-sexp-mappings-for-regular-people
 vim-slime
+vim-snippets
 vim-surround

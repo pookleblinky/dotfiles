@@ -15,10 +15,17 @@
 ;; Org mode Templates
 (setq org-capture-templates
       '(("t" "Todo" entry (file "~/org/refile.org")
-	 "* TODO %?\n %i\n %a")
+	 "* TODO %? %U")
 	("n" "Notes" entry (file "~/org/refile.org")
-	 "* Note %?\nAdded: %U\n")))
-
+	 "* Note %? %U")
+	;; Specific actions
+	("l" "language of the day" entry (file+datetree "~/org/orgfile.org")
+	 "* Language of the day: %? %U")
+	("j" "Journal entry" entry (file+datetree "~/org/orgfile.org")
+	 "* %? %U" :empty-lines 1)
+	("b" "Blogpost" entry (file+datetree "~/org/blog.org")
+	 "* DRAFT Title: %? %U")))
+       
 ;; Refile targets
 (setq org-refile-targets '((nil :maxlevel . 9)
 			   (org-agenda-files :maxlevel . 9)))
@@ -27,3 +34,13 @@
 
 ;; Show the future
 (setq org-agenda-start-on-weekday nil)
+
+;; Easy template for elisp in org-mode
+(add-to-list 'org-structure-template-alist '("se"
+                                             "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
+;; Easy template for frog header
+(add-to-list 'org-structure-template-alist
+	     ;; Ugly, but works
+             '("sb"
+	       "\s\s\s\sTitle:\n\s\s\s\sDate:(insert-date-time)\n\s\s\s\sTags:\n\n"))
+
