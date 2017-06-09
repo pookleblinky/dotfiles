@@ -1,7 +1,10 @@
 ;; Not just todo/done
 (setq org-todo-keywords
       '(
-        (sequence "TODO(t)" "STARTED(s)" "NEXT(n)" "|" "DONE(d)")))
+        (sequence "TODO(t)" "STARTED(s)"
+		  "DEFERRED(p)" "NEXT(n)"
+		  "YAKSHAVE(y)"
+		  "|" "DONE(d)" "CANCELLED(c)")))
 
 ;; Enforce dependencies
 (setq org-enforce-todo-dependencies t)
@@ -19,11 +22,11 @@
 	("n" "Notes" entry (file "~/org/refile.org")
 	 "* Note %? %U")
 	;; Specific actions
-	("l" "language of the day" entry (file+datetree "~/org/orgfile.org")
+	("l" "language of the day" entry (file+datetree+prompt "~/org/code.org")
 	 "* Language of the day: %? %U")
-	("j" "Journal entry" entry (file+datetree "~/org/orgfile.org")
+	("j" "Journal entry" entry (file+datetree+prompt "~/org/orgfile.org")
 	 "* %? %U" :empty-lines 1)
-	("b" "Blogpost" entry (file+datetree "~/org/blog.org")
+	("b" "Blogpost" entry (file+datetree+prompt "~/org/blog.org")
 	 "* DRAFT Title: %? %U")))
        
 ;; Refile targets
