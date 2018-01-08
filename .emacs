@@ -40,6 +40,7 @@
 (setq org-agenda-files (list
 			"~/org/code.org"
 			"~/org/blog.org"
+			"~/org/workout.org"
 			"~/org/orgfile.org"))
 (setq org-default-notes-file "~/org/orgfile.org")
 

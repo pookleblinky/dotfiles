@@ -26,6 +26,10 @@
 	 "* Language of the day: %? %U")
 	("j" "Journal entry" entry (file+datetree+prompt "~/org/orgfile.org")
 	 "* %? %U" :empty-lines 1)
+	("w" "Log Workout" entry (file+datetree+prompt "~/org/workout.org")
+	 "* %? %U" :empty-lines 1)
+	("m" "Log meal" entry (file+datetree "~/org/diet.org")
+	 "* %? %U" :empty-lines 1)
 	("b" "Blogpost" entry (file+datetree+prompt "~/org/blog.org")
 	 "* DRAFT Title: %? %U")))
        
