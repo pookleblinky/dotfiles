@@ -1,3 +1,6 @@
 function language-of-the-day
-    shuf -n 1 ~/langlist
+    echo "Major language: " 
+    shuf -n 1 ~/majorlanglist
+    echo "Minor language: " 
+    shuf -n 1 ~/minorlanglist
 end
