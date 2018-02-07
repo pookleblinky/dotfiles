@@ -4,14 +4,19 @@ windows:
     layout: main-vertical
     panes:
       - vim
-      - ddate
+      - racket
       - ddate
   - name: music
     root: ~/Music/cmus-playlists
     layout: tiled
     panes:
       - cmus
-  - name: irc
+  - name: orgmode
+    root: ~/
+    layout: tiled
+    panes:
+      - emacs -nw
+  - name: games
     root: ~/
     layout: tiled
     panes:
