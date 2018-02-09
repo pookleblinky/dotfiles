@@ -11,7 +11,7 @@ myConfig = defaultConfig {
         modMask     = myModMask
     ,   workspaces  = myWorkspaces
     ,   borderWidth = 0
-    ,   terminal    = "st"
+    ,   terminal    = "terminator"
     }
 
 main = xmonad myConfig 
