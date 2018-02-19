@@ -1,3 +1,4 @@
 function dwarf
-    ~/df_linux/df
+   ~/LNP-44.05/startlnp 
 end
+
