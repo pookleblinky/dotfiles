@@ -1,0 +1,19 @@
+windows:
+  - name: hacking
+    root: ~/
+    layout: main-vertical
+    panes:
+      - vim
+      - racket
+      - ddate
+  - name: music
+    root: ~/Music/cmus-playlists
+    layout: tiled
+    panes:
+      - cmus
+  - name: games
+    root: ~/
+    layout: tiled
+    panes:
+      - ddate
+
