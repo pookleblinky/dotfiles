@@ -7,5 +7,3 @@ rbenv rehash >/dev/null ^&1
 
 export CHICKEN_REPOSITORY=$HOME/.local/lib/chicken
 
-set fish_plugins vi-mode
-set fish_key_bindings fish_user_key_bindings
