@@ -1,1 +1,1 @@
-/home/pook/.local/share/omf/themes/sushi/fish_prompt.fish
+/home/pook/.local/share/omf/themes/fishbone/fish_prompt.fish
