@@ -113,6 +113,8 @@ set tabstop=4
 
 set relativenumber
 
+set spell spelllang=en_us
+
 " Return to last edit position when opening file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
